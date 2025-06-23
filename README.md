@@ -38,12 +38,12 @@ This React Weather App allows users to search for any city and get detailed weat
 
 ## Technologies Used
 
-- **React 19** — For building a dynamic and responsive user interface with reusable components.
-- **Vite** — Fast development server and build tool for optimized performance.
-- **Tailwind CSS 4.1.10** — Utility-first CSS framework for rapid and consistent styling.
-- **Material UI Icons** — Provides modern, scalable icons to enhance the UI.
-- **Axios** — Simplifies HTTP requests to fetch weather data from APIs.
-- **OpenWeatherMap API** — Supplies real-time weather, forecast, and air quality data worldwide.
+-  ⚛️ **React 19** — For building a dynamic and responsive user interface with reusable components.
+-  ⚡ **Vite** — Fast development server and build tool for optimized performance.
+-  🎨 **Tailwind CSS 4.1.10** — Utility-first CSS framework for rapid and consistent styling.
+-  🛠️ **Material UI Icons** — Provides modern, scalable icons to enhance the UI.
+-  📡 **Axios** — Simplifies HTTP requests to fetch weather data from APIs.
+-  🌤️ **OpenWeatherMap API** — Supplies real-time weather, forecast, and air quality data worldwide.
 
 ---
 
