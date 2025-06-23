@@ -28,11 +28,11 @@ This React Weather App allows users to search for any city and get detailed weat
 
 ## Screenshots
 
-## Dark Theme Mode
-![WeatherApp ScreenShot 1](Images/Screenshot1.png)
-
 ## Light Theme Mode
-![WeatherApp ScreenShot 2](Images/Screenshot2.png)
+![WeatherApp Light Theme Mode ScreenShot 1](Images/Screenshot1.png)
+
+## Dark Theme Mode
+![WeatherApp Dark Theme Mode ScreenShot 2](Images/Screenshot2.png)
 
 ---
 
