@@ -36,26 +36,6 @@ function App() {
       .catch(error => console.error('Error fetching the air quality data:', error));
   };
 
-  // const fetchweatherData = (city) => {
-  //   const API_KEY = '1d5762eaee9edbfaf0e430baa85115ae';
-  //   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`)
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       setWeatherData(data);
-  //       console.log(JSON.stringify(data));
-  //       fetchAirQualityData(data.coord.lat, data.coord.lon);
-  //       // axios.get((`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`))
-  //       //   .then(response => {
-  //       //     setFiveDayForecast(response.data);
-  //       // })
-  //       axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`)
-  //         .then(response => {
-  //           setFiveDayForecast(response.data);
-  //         })
-
-  //     });
-  // };
-
   const fetchweatherData = async (city) => {
     const API_KEY = '1d5762eaee9edbfaf0e430baa85115ae';
     setLoading(true);
@@ -116,45 +96,6 @@ function App() {
   const handleSearch = (searchedCity) => {
     setcity(searchedCity);
   };
-
-  // return (
-  //   <div>
-  //     <Navbar onSearch={handleSearch} />
-  //     {weatherData && (
-
-  //       // <div style={{ display: 'flex', padding: '30px', gap: '20px' }}>
-  //       //   <div style={{ flex: '1', marginRight: '10px' }}>
-  //       //     <Mainweather weatherData={weatherData} />
-  //       //     <p style={{ fontWeight: '700', fontSize: '20px', marginTop: '20px' }}>5 Days Forecast</p>
-  //       //     {fiveDayForecast && <FiveDayForecast forecastData={fiveDayForecast} />}
-  //       //   </div>
-
-  //       //   <div style={{ display: 'flex', flexDirection: 'column', flex: '0.5', gap: '20px' }}>
-  //       //     <TodayHighlights weatherData={weatherData} airQualityData={airQualityData} />
-  //       //   </div>
-  //       // </div>
-
-  //       <div className="max-w-7xl mx-auto px-4 py-8">
-  //         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-  //           {/* Left Side */}
-  //           <div className="flex flex-col gap-2 lg:col-span-1">
-  //             <Mainweather weatherData={weatherData} />
-  //             <div>
-  //               <p className="font-bold text-2xl mt-8 mb-4 text-center">5 Days Forecast</p>
-  //               {fiveDayForecast && <FiveDayForecast forecastData={fiveDayForecast} />}
-  //             </div>
-  //           </div>
-  //           {/* Right Side */}
-  //           <div className="lg:col-span-2">
-  //             <TodayHighlights weatherData={weatherData} airQualityData={airQualityData} />
-  //             <WeatherSuggestion weatherData={weatherData} airQualityData={airQualityData} />
-  //           </div>
-  //         </div>
-  //       </div>
-
-  //     )}
-  //   </div>
-  // );
 
   const handleCurrentLocationClick = () => {
     if (!navigator.geolocation) {
@@ -252,10 +193,7 @@ function App() {
               <div className="flex flex-col gap-2 lg:col-span-1">
                 <Mainweather weatherData={weatherData} />
                 {hourlyForecast && <HourlyForecast forecastData={hourlyForecast} />}
-
-                {/* <HourlyForecast forecastData={hourlyForecast} /> */}
                 <div>
-                  {/* <p className="font-bold text-2xl mt-8 mb-4 text-center">5 Days Forecast</p> */}
                   {fiveDayForecast && <FiveDayForecast forecastData={fiveDayForecast} />}
                 </div>
               </div>
