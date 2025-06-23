@@ -2,7 +2,6 @@
 
 A modern, responsive weather application built with React, Vite, Tailwind CSS, and Material UI that provides accurate current weather, air quality, and forecast data for any city worldwide.
 
----
 
 # Overview
 This React Weather App allows users to search for any city and get detailed weather information including temperature, humidity, wind speed, air quality index (AQI), sunrise and sunset times, and minute-by-minute precipitation visualization. It uses the OpenWeatherMap API to fetch real-time data and presents it with a clean, user-friendly interface.
@@ -18,7 +17,6 @@ This React Weather App allows users to search for any city and get detailed weat
 - **Material UI & Tailwind CSS:** Combines Material UI icons with Tailwind CSS for styling.
 - **Built with Vite:** Fast development and optimized build process.
 
----
 
 ## Screenshots
 
@@ -123,13 +121,11 @@ npm run deploy
 ## Contribution
 Feel free to fork the repository, make improvements, and submit pull requests. Issues and feature requests are also welcome!
 
----
 
 # Acknowledgements
 1. **Thanks to OpenWeatherMap for the API.**
 2. **Inspired by various open-source weather apps and UI libraries.**
 
----
 
 
 ## License
