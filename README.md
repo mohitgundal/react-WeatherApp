@@ -121,17 +121,25 @@ npm run deploy
 ## Contribution
 Feel free to fork the repository, make improvements, and submit pull requests. Issues and feature requests are also welcome!
 
+---
+
 # Acknowledgements
-**Thanks to OpenWeatherMap for the API.**
-**Inspired by various open-source weather apps and UI libraries.**
+1. **Thanks to OpenWeatherMap for the API.**
+2. **Inspired by various open-source weather apps and UI libraries.**
+
+---
 
 
 ## License
 This project is licensed under the MIT License — see the LICENSE file for details.
 
+---
+
 
 ## Contact
 Created by Mohit Gundal. Feel free to reach out for suggestions or collaborations!
+
+---
 
 
 ## Thank you for checking out this project! 😊
