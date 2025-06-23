@@ -145,5 +145,3 @@ Created by Mohit Gundal. Feel free to reach out for suggestions or collaboration
 
 
 ## Thank you for checking out this project! 😊
-
-Would you like me to help you customize this further, for example, adding badges, or writing a shorter summary?
