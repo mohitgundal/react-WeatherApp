@@ -1,7 +1,5 @@
 # React Weather App
 
-A modern, responsive weather application built with React, Vite, Tailwind CSS, and Material UI that provides accurate current weather, air quality, and forecast data for any city worldwide.
-
 ![GitHub repo size](https://img.shields.io/github/repo-size/mohitgundal/react-WeatherApp)
 ![GitHub license](https://img.shields.io/github/license/mohitgundal/react-WeatherApp)
 
