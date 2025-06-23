@@ -26,7 +26,7 @@ const Navbar = ({ onSearch, onCurrentLocation }) => {
       <div className="flex items-center gap-3 flex-shrink-0">
         <FilterDramaIcon className="text-blue-500 dark:text-blue-300" fontSize="large" />
         <span className="font-extrabold text-3xl tracking-tight text-gray-900 dark:text-white select-none">
-          Weather
+          ForecastHub
         </span>
       </div>
 
