@@ -69,7 +69,7 @@ export default theme;`}function Bf(u={},...r){const{breakpoints:f,mixins:c={},sp
       border border-white/20 dark:border-gray-700/40\r
       rounded-2xl shadow-md\r
       transition duration-300\r
-    `,children:[z.jsxs("div",{className:"flex items-center gap-3 flex-shrink-0",children:[z.jsx(W3,{className:"text-blue-500 dark:text-blue-300",fontSize:"large"}),z.jsx("span",{className:"font-extrabold text-3xl tracking-tight text-gray-900 dark:text-white select-none",children:"Weather"})]}),z.jsxs("div",{className:"flex items-center gap-3 flex-grow max-w-xl w-full md:w-auto",children:[z.jsx("input",{type:"search",className:`\r
+    `,children:[z.jsxs("div",{className:"flex items-center gap-3 flex-shrink-0",children:[z.jsx(W3,{className:"text-blue-500 dark:text-blue-300",fontSize:"large"}),z.jsx("span",{className:"font-extrabold text-3xl tracking-tight text-gray-900 dark:text-white select-none",children:"ForecastHub"})]}),z.jsxs("div",{className:"flex items-center gap-3 flex-grow max-w-xl w-full md:w-auto",children:[z.jsx("input",{type:"search",className:`\r
             bg-white/80 dark:bg-gray-700/80\r
             rounded-full\r
             px-5 py-2.5\r
