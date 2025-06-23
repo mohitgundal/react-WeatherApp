@@ -2,11 +2,21 @@
 
 A modern, responsive weather application built with React, Vite, Tailwind CSS, and Material UI that provides accurate current weather, air quality, and forecast data for any city worldwide.
 
+![GitHub repo size](https://img.shields.io/github/repo-size/mohitgundal/react-WeatherApp)
+![GitHub license](https://img.shields.io/github/license/mohitgundal/react-WeatherApp)
 
-# Overview
+A modern, responsive weather application built with React, Vite, Tailwind CSS, and Material UI that provides accurate current weather, air quality, and forecast data for any city worldwide.
+
+## Live Demo
+
+[https://mohitgundal.github.io/react-WeatherApp/](https://mohitgundal.github.io/react-WeatherApp/)
+
+
+
+## Overview
 This React Weather App allows users to search for any city and get detailed weather information including temperature, humidity, wind speed, air quality index (AQI), sunrise and sunset times, and minute-by-minute precipitation visualization. It uses the OpenWeatherMap API to fetch real-time data and presents it with a clean, user-friendly interface.
 
-# Features
+## Features
 
 - **Current Weather Data:** Real-time temperature, humidity, wind speed, pressure, and feels-like temperature.
 - **Air Quality Index:** Displays AQI with pollutant details (CO, NO, NO₂, O₃).
@@ -51,7 +61,7 @@ git clone https://github.com/mohitgundal/react-WeatherApp.git
 2. **Navigate to the project folder:**
 
 ```bash
-cd Calculator-App
+cd react-WeatherApp
 ```
 
 3. **Install dependencies:**
@@ -75,10 +85,10 @@ npm run dev
 
 Open http://localhost:5173 in your browser.
 
-# Deployment
+## Deployment
 This app can be deployed easily on GitHub Pages or any static hosting service.
 
-# GitHub Pages Deployment
+## GitHub Pages Deployment
 
 1. **Set the base option in vite.config.js to your repository name:**
 
@@ -122,7 +132,7 @@ npm run deploy
 Feel free to fork the repository, make improvements, and submit pull requests. Issues and feature requests are also welcome!
 
 
-# Acknowledgements
+## Acknowledgements
 1. **Thanks to OpenWeatherMap for the API.**
 2. **Inspired by various open-source weather apps and UI libraries.**
 
