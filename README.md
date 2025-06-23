@@ -106,6 +106,8 @@ npm run deploy
 
 4. **Configure GitHub Pages source branch to gh-pages in your repo settings.**
 
+---
+
 
 ## Folder Structure
 ```plaintext
@@ -133,16 +135,11 @@ Feel free to fork the repository, make improvements, and submit pull requests. I
 ## License
 This project is licensed under the MIT License — see the LICENSE file for details.
 
----
-
 
 ## Contact
 Created by Mohit Gundal. Feel free to reach out for suggestions or collaborations!
 
----
-
 
 ## Thank you for checking out this project! 😊
----
 
 Would you like me to help you customize this further, for example, adding badges, or writing a shorter summary?
