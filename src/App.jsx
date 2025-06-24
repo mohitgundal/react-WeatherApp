@@ -166,29 +166,80 @@ function App() {
     );
   };
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-200 via-purple-100 to-pink-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
+  // return (
+  //   <div className="min-h-screen bg-gradient-to-br from-blue-200 via-purple-100 to-pink-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
+
+  //     <div>
+  //       {/* <Navbar onSearch={handleSearch} /> */}
+  //       <Navbar onSearch={handleSearch} onCurrentLocation={handleCurrentLocationClick} />
+
+  //       {/* Show loading spinner/message */}
+  //       {loading && (
+  //         // <div className="text-center text-gray-400 py-8 text-xl">Loading...</div>
+  //         <div className="bg-white/40 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/40 rounded-xl shadow p-6 text-center text-gray-400 dark:text-gray-200 py-8 text-xl mx-auto max-w-lg mt-12">Loading...</div>
+  //       )}
+
+  //       {/* Show error message */}
+  //       {error && (
+  //         // <div className="text-center text-red-500 py-8 text-xl">{error}</div>
+  //         <div className="bg-white/40 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/40 rounded-xl shadow p-6 text-center text-red-500 py-8 text-xl mx-auto max-w-lg mt-12">{error}</div>
+  //       )}
+
+  //       {/* Show weather UI only if not loading and not error */}
+  //       {!loading && !error && weatherData && (
+  //         <div className="max-w-7xl mx-auto px-4 py-8">
+  //           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+  //             {/* Left Side */}
+  //             <div className="flex flex-col gap-2 lg:col-span-1">
+  //               <Mainweather weatherData={weatherData} />
+  //               {hourlyForecast && <HourlyForecast forecastData={hourlyForecast} />}
+  //               <div>
+  //                 {fiveDayForecast && <FiveDayForecast forecastData={fiveDayForecast} />}
+  //               </div>
+  //             </div>
+  //             {/* Right Side */}
+  //             <div className="lg:col-span-2">
+  //               <TodayHighlights weatherData={weatherData} airQualityData={airQualityData} />
+  //               <WeatherSuggestion weatherData={weatherData} airQualityData={airQualityData} />
+  //             </div>
+  //           </div>
+  //         </div>
+  //       )}
+  //     </div>
+
+  //   </div>
+  // );
+
+    return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-200 via-purple-100 to-pink-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300 overflow-y-auto">
 
       <div>
-        {/* <Navbar onSearch={handleSearch} /> */}
         <Navbar onSearch={handleSearch} onCurrentLocation={handleCurrentLocationClick} />
 
-        {/* Show loading spinner/message */}
+        {/* Loading Spinner */}
         {loading && (
-          // <div className="text-center text-gray-400 py-8 text-xl">Loading...</div>
-          <div className="bg-white/40 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/40 rounded-xl shadow p-6 text-center text-gray-400 dark:text-gray-200 py-8 text-xl mx-auto max-w-lg mt-12">Loading...</div>
+          <div
+            className="bg-white/40 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/40 rounded-xl shadow p-6 text-center text-gray-400 dark:text-gray-200 py-8 text-xl mx-auto max-w-lg mt-12"
+            role="status"
+          >
+            Loading...
+          </div>
         )}
 
-        {/* Show error message */}
+        {/* Error Message */}
         {error && (
-          // <div className="text-center text-red-500 py-8 text-xl">{error}</div>
-          <div className="bg-white/40 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/40 rounded-xl shadow p-6 text-center text-red-500 py-8 text-xl mx-auto max-w-lg mt-12">{error}</div>
+          <div
+            className="bg-white/40 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/40 rounded-xl shadow p-6 text-center text-red-500 py-8 text-xl mx-auto max-w-lg mt-12"
+            role="alert"
+          >
+            {error}
+          </div>
         )}
 
-        {/* Show weather UI only if not loading and not error */}
+        {/* Weather UI */}
         {!loading && !error && weatherData && (
-          <div className="max-w-7xl mx-auto px-4 py-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          <div className="max-w-7xl mx-auto px-2 sm:px-4 py-6 sm:py-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 items-start">
               {/* Left Side */}
               <div className="flex flex-col gap-2 lg:col-span-1">
                 <Mainweather weatherData={weatherData} />
@@ -198,7 +249,7 @@ function App() {
                 </div>
               </div>
               {/* Right Side */}
-              <div className="lg:col-span-2">
+              <div className="md:col-span-1 lg:col-span-2">
                 <TodayHighlights weatherData={weatherData} airQualityData={airQualityData} />
                 <WeatherSuggestion weatherData={weatherData} airQualityData={airQualityData} />
               </div>
@@ -206,7 +257,6 @@ function App() {
           </div>
         )}
       </div>
-
     </div>
   );
 
@@ -216,3 +266,70 @@ function App() {
 }
 
 export default App
+
+
+// import { useEffect, useState } from 'react';
+// import './App.css';
+// import Navbar from './components/Navbar';
+// import Mainweather from './components/Mainweather';
+// import TodayHighlights from './components/TodayHighlights';
+// import axios from 'axios';
+// import FiveDayForecast from './components/FiveDayForecast';
+// import WeatherSuggestion from './components/WeatherSuggestion';
+// import HourlyForecast from './components/HourlyForecast';
+
+// function App() {
+//   // ...your state and fetch logic remains unchanged...
+
+//   return (
+//     <div className="min-h-screen bg-gradient-to-br from-blue-200 via-purple-100 to-pink-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300 overflow-y-auto">
+
+//       <div>
+//         <Navbar onSearch={handleSearch} onCurrentLocation={handleCurrentLocationClick} />
+
+//         {/* Loading Spinner */}
+//         {loading && (
+//           <div
+//             className="bg-white/40 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/40 rounded-xl shadow p-6 text-center text-gray-400 dark:text-gray-200 py-8 text-xl mx-auto max-w-lg mt-12"
+//             role="status"
+//           >
+//             Loading...
+//           </div>
+//         )}
+
+//         {/* Error Message */}
+//         {error && (
+//           <div
+//             className="bg-white/40 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/40 rounded-xl shadow p-6 text-center text-red-500 py-8 text-xl mx-auto max-w-lg mt-12"
+//             role="alert"
+//           >
+//             {error}
+//           </div>
+//         )}
+
+//         {/* Weather UI */}
+//         {!loading && !error && weatherData && (
+//           <div className="max-w-7xl mx-auto px-2 sm:px-4 py-6 sm:py-8">
+//             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 items-start">
+//               {/* Left Side */}
+//               <div className="flex flex-col gap-2 lg:col-span-1">
+//                 <Mainweather weatherData={weatherData} />
+//                 {hourlyForecast && <HourlyForecast forecastData={hourlyForecast} />}
+//                 <div>
+//                   {fiveDayForecast && <FiveDayForecast forecastData={fiveDayForecast} />}
+//                 </div>
+//               </div>
+//               {/* Right Side */}
+//               <div className="md:col-span-1 lg:col-span-2">
+//                 <TodayHighlights weatherData={weatherData} airQualityData={airQualityData} />
+//                 <WeatherSuggestion weatherData={weatherData} airQualityData={airQualityData} />
+//               </div>
+//             </div>
+//           </div>
+//         )}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
