@@ -187,7 +187,7 @@ function App() {
 
         {/* Show weather UI only if not loading and not error */}
         {/* Changed code block */}
-        {!loading && !error && weatherData && (
+        {/* {!loading && !error && weatherData && (
           <div className="max-w-3xl md:max-w-4xl lg:max-w-7xl mx-auto px-2 sm:px-4 py-6 sm:py-8">
             <div className="grid grid-cols-1 gap-6">
               <Mainweather weatherData={weatherData} />
@@ -197,7 +197,20 @@ function App() {
               <WeatherSuggestion weatherData={weatherData} airQualityData={airQualityData} />
             </div>
           </div>
+        )} */}
+
+        {!loading && !error && weatherData && (
+          <div className="max-w-3xl md:max-w-4xl lg:max-w-7xl mx-auto px-2 sm:px-4 py-6 sm:py-8">
+            <div className="grid grid-cols-1 gap-6 place-items-center">
+              <Mainweather weatherData={weatherData} />
+              {hourlyForecast && <HourlyForecast forecastData={hourlyForecast} />}
+              {fiveDayForecast && <FiveDayForecast forecastData={fiveDayForecast} />}
+              <TodayHighlights weatherData={weatherData} airQualityData={airQualityData} />
+              <WeatherSuggestion weatherData={weatherData} airQualityData={airQualityData} />
+            </div>
+          </div>
         )}
+
       </div>
 
     </div>
