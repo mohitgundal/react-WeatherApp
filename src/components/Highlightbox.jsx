@@ -36,7 +36,7 @@ const Highlightbox = ({ title, value, Icon }) => {
             min-h-[90px] sm:min-h-[110px]
             transition duration-300 hover:shadow-xl
         ">
-            <div className="flex items-center gap-2 mb-1 sm:mb-2">
+            <div className="flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
                 <Icon className="text-2xl sm:text-3xl text-blue-500 dark:text-blue-300" aria-label={title} />
                 <span className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">{title}</span>
             </div>

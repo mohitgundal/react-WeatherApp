@@ -322,6 +322,7 @@
 // export default TodayHighlights;
 
 
+
 import React from "react";
 import AirIcon from '@mui/icons-material/Air';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
@@ -365,22 +366,22 @@ const TodayHighlights = ({ weatherData, airQualityData }) => {
       backdrop-blur-md
       border border-white/20 dark:border-gray-700/40
       rounded-2xl shadow-lg w-full
-      max-w-xs sm:max-w-2xl md:max-w-3xl
-      mx-auto
+      max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl
       p-4 sm:p-6 md:p-8
-      flex flex-col gap-6 sm:gap-8
+      flex flex-col gap-4 sm:gap-6
       transition duration-300
     ">
       <div className="text-lg sm:text-2xl font-bold mb-2 sm:mb-4 tracking-tight text-gray-900 dark:text-white">
         Today's Highlights
       </div>
-      <div className="flex flex-col md:flex-row md:flex-nowrap gap-4 sm:gap-6">
+      {/* Cards: Always stacked vertically; only side-by-side on md+ if you want */}
+      <div className="flex flex-col md:flex-row gap-4 sm:gap-6">
         {/* Air Quality Card */}
         <div className="
           bg-white/40 dark:bg-gray-700/50
           backdrop-blur-md
           border border-white/10 dark:border-gray-700/30
-          rounded-xl p-4 sm:p-6 flex-1 min-w-0
+          rounded-xl p-4 sm:p-6 w-full
           shadow hover:shadow-xl transition duration-300 flex flex-col gap-3 sm:gap-4
         ">
           <div className="flex justify-between items-center text-base sm:text-lg font-semibold mb-1 sm:mb-2 text-gray-900 dark:text-white">
@@ -422,7 +423,7 @@ const TodayHighlights = ({ weatherData, airQualityData }) => {
           bg-white/40 dark:bg-gray-700/50
           backdrop-blur-md
           border border-white/10 dark:border-gray-700/30
-          rounded-xl p-4 sm:p-6 flex-1 min-w-0
+          rounded-xl p-4 sm:p-6 w-full
           shadow hover:shadow-xl transition duration-300 flex flex-col gap-3 sm:gap-4
         ">
           <div className="text-base sm:text-lg font-semibold mb-1 sm:mb-2 text-gray-900 dark:text-white">Sunrise & Sunset</div>
@@ -466,7 +467,7 @@ const TodayHighlights = ({ weatherData, airQualityData }) => {
                 {i * 5} min
               </p>
               <div className="h-8 flex items-end justify-center mt-1 sm:mt-2 w-5 sm:w-6">
-                <div 
+                <div
                   className="bg-blue-400 w-3 sm:w-4 rounded-t"
                   style={{ height: `${Math.random() * 30 + 10}px` }}
                 ></div>

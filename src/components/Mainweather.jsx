@@ -82,7 +82,6 @@
 
 // export default Mainweather;
 
-
 import React from "react";
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
@@ -109,25 +108,28 @@ const Mainweather = ({ weatherData }) => {
         if (temperatureCelsius > 23) {
             return (
                 <WbSunnyIcon
-                    className="ml-2 sm:ml-3 text-4xl sm:text-5xl text-orange-400 dark:text-yellow-300"
+                    className="ml-2 sm:ml-3 text-3xl sm:text-4xl md:text-5xl text-orange-400 dark:text-yellow-300"
                     titleAccess="Sunny"
                     role="img"
+                    aria-label="Sunny"
                 />
             );
         } else if (temperatureCelsius < 10) {
             return (
                 <AcUnitIcon
-                    className="ml-2 sm:ml-3 text-4xl sm:text-5xl text-blue-400 dark:text-blue-300"
+                    className="ml-2 sm:ml-3 text-3xl sm:text-4xl md:text-5xl text-blue-400 dark:text-blue-300"
                     titleAccess="Cold"
                     role="img"
+                    aria-label="Cold"
                 />
             );
         } else {
             return (
                 <CloudIcon
-                    className="ml-2 sm:ml-3 text-4xl sm:text-5xl text-gray-400 dark:text-gray-200"
+                    className="ml-2 sm:ml-3 text-3xl sm:text-4xl md:text-5xl text-gray-400 dark:text-gray-200"
                     titleAccess="Cloudy"
                     role="img"
+                    aria-label="Cloudy"
                 />
             );
         }
@@ -144,28 +146,23 @@ const Mainweather = ({ weatherData }) => {
             border border-white/20 dark:border-gray-700/40
             rounded-2xl shadow-lg w-full
             max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl
-            mx-auto
             p-4 sm:p-6 md:p-8
             flex flex-col gap-2 sm:gap-3
             transition duration-300
         ">
-            <div className="text-xl sm:text-2xl font-bold mb-1 tracking-tight text-gray-900 dark:text-white">
-                Now
-            </div>
+            <div className="text-xl sm:text-2xl font-bold mb-1 tracking-tight text-gray-900 dark:text-white">Now</div>
             <div className="flex items-center text-3xl sm:text-4xl md:text-5xl font-bold mt-2 text-gray-900 dark:text-white">
                 {temperatureCelsius}°C
                 {renderTemperatureIcon()}
             </div>
-            <div className="text-base sm:text-lg mt-2 font-medium capitalize text-gray-700 dark:text-gray-200">
-                {weatherDescription}
-            </div>
+            <div className="text-base sm:text-lg mt-2 font-medium capitalize text-gray-700 dark:text-gray-200">{weatherDescription}</div>
             <div className="mt-3 sm:mt-4 flex flex-col gap-1 sm:gap-2">
                 <div className="flex items-center">
-                    <CalendarMonthIcon className="mr-1 sm:mr-2 text-lg sm:text-xl text-gray-700 dark:text-gray-200" />
+                    <CalendarMonthIcon className="mr-2 text-lg sm:text-xl text-gray-700 dark:text-gray-200" />
                     <span className="text-sm sm:text-base text-gray-700 dark:text-gray-200">{currentDate}</span>
                 </div>
                 <div className="flex items-center">
-                    <LocationOnIcon className="mr-1 sm:mr-2 text-lg sm:text-xl text-gray-700 dark:text-gray-200" />
+                    <LocationOnIcon className="mr-2 text-lg sm:text-xl text-gray-700 dark:text-gray-200" />
                     <span className="text-sm sm:text-base text-gray-700 dark:text-gray-200">{cityName}, {countryname}</span>
                 </div>
             </div>

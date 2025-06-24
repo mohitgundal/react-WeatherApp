@@ -43,7 +43,6 @@
 
 // export default ThemeToggle;
 
-
 import React, { useEffect, useState } from "react";
 
 const ThemeToggle = () => {
@@ -92,8 +91,7 @@ const ThemeToggle = () => {
       <span
         role="img"
         aria-label={dark ? "moon" : "sun"}
-        className="text-xl sm:text-2xl transition-transform duration-300"
-        style={{ display: "inline-block", transform: dark ? "rotate(-12deg)" : "rotate(0deg)" }}
+        className="text-xl sm:text-2xl"
       >
         {dark ? "🌙" : "🌞"}
       </span>

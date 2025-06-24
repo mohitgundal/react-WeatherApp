@@ -105,7 +105,6 @@
 
 // export default Navbar;
 
-
 import React, { useState } from "react";
 import FilterDramaIcon from '@mui/icons-material/FilterDrama';
 import GpsFixedIcon from '@mui/icons-material/GpsFixed';
@@ -122,7 +121,7 @@ const Navbar = ({ onSearch, onCurrentLocation }) => {
 
   return (
     <nav className="
-      flex flex-col sm:flex-row flex-wrap items-center justify-between gap-3 sm:gap-4
+      flex flex-col sm:flex-row flex-wrap items-center justify-between gap-2 sm:gap-4
       mt-2 px-3 sm:px-6 py-2 sm:py-3
       bg-white/30 dark:bg-gray-800/50
       backdrop-blur-md
@@ -131,15 +130,15 @@ const Navbar = ({ onSearch, onCurrentLocation }) => {
       transition duration-300
     ">
       {/* Logo and Title */}
-      <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0 mb-2 sm:mb-0">
+      <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0 mb-2 sm:mb-0 w-full sm:w-auto">
         <FilterDramaIcon className="text-blue-500 dark:text-blue-300" fontSize="large" />
-        <span className="font-extrabold text-xl sm:text-3xl tracking-tight text-gray-900 dark:text-white select-none">
+        <span className="font-extrabold text-2xl sm:text-3xl tracking-tight text-gray-900 dark:text-white select-none">
           ForecastHub
         </span>
       </div>
 
       {/* Search Bar */}
-      <div className="flex items-center gap-2 sm:gap-3 w-full sm:max-w-xl flex-grow">
+      <div className="flex items-center gap-2 sm:gap-3 w-full max-w-lg flex-grow mb-2 sm:mb-0">
         <input
           type="search"
           className="
@@ -183,7 +182,7 @@ const Navbar = ({ onSearch, onCurrentLocation }) => {
       </div>
 
       {/* Right Side: Theme Toggle + Current Location */}
-      <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0 mt-2 sm:mt-0">
+      <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 flex-shrink-0 w-full sm:w-auto">
         <ThemeToggle />
         <button
           onClick={onCurrentLocation}

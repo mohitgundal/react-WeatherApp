@@ -104,7 +104,8 @@
 // export default WeatherSuggestion;
 
 
-import React from "react";
+
+import React from "react"
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import UmbrellaIcon from '@mui/icons-material/Umbrella';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
@@ -116,7 +117,8 @@ const suggestionRules = [
     suggestion: "Carry an umbrella today!",
     icon: (
       <UmbrellaIcon
-        className="text-blue-400 text-4xl sm:text-5xl md:text-6xl animate-bounce"
+        fontSize="large"
+        className="text-blue-400 text-3xl sm:text-5xl md:text-6xl animate-bounce"
         titleAccess="Rainy weather"
         role="img"
         aria-label="Rainy weather"
@@ -128,7 +130,8 @@ const suggestionRules = [
     suggestion: "Stay hydrated and wear sunscreen!",
     icon: (
       <WbSunnyIcon
-        className="text-yellow-400 text-4xl sm:text-5xl md:text-6xl animate-pulse"
+        fontSize="large"
+        className="text-yellow-400 text-3xl sm:text-5xl md:text-6xl animate-pulse"
         titleAccess="Hot weather"
         role="img"
         aria-label="Hot weather"
@@ -140,7 +143,8 @@ const suggestionRules = [
     suggestion: "Bundle up, it's chilly outside!",
     icon: (
       <AcUnitIcon
-        className="text-blue-300 text-4xl sm:text-5xl md:text-6xl animate-pulse"
+        fontSize="large"
+        className="text-blue-300 text-3xl sm:text-5xl md:text-6xl animate-pulse"
         titleAccess="Cold weather"
         role="img"
         aria-label="Cold weather"
@@ -152,7 +156,8 @@ const suggestionRules = [
     suggestion: "Air quality is poor, limit outdoor activity.",
     icon: (
       <MasksIcon
-        className="text-red-400 text-4xl sm:text-5xl md:text-6xl animate-bounce"
+        fontSize="large"
+        className="text-red-400 text-3xl sm:text-5xl md:text-6xl animate-bounce"
         titleAccess="Poor air quality"
         role="img"
         aria-label="Poor air quality"
@@ -179,7 +184,7 @@ const getSuggestion = (weatherData, airQualityData) => {
     suggestion: "Great day for outdoor activities!",
     icon: (
       <span
-        className="text-green-400 text-4xl sm:text-5xl md:text-6xl animate-pulse"
+        className="text-green-400 text-3xl sm:text-5xl md:text-6xl animate-pulse"
         role="img"
         aria-label="Good air quality"
         title="Good air quality"
@@ -199,8 +204,8 @@ const WeatherSuggestion = ({ weatherData, airQualityData }) => {
       backdrop-blur-md
       border border-white/20 dark:border-gray-700/40
       rounded-2xl shadow-lg w-full
-      max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl
-      mx-auto p-4 sm:p-6 md:p-8 mt-6 sm:mt-8
+      max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl
+      p-4 sm:p-6 md:p-8
       flex flex-col items-center gap-2 sm:gap-4
       transition duration-300
     ">

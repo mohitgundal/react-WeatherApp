@@ -4,3 +4,24 @@
 html {
   transition: background-color 0.3s, color 0.3s;
 }
+
+/* 
+{!loading && !error && weatherData && (
+          <div className="max-w-7xl mx-auto px-4 py-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+              {Left Side}
+              <div className="flex flex-col gap-2 lg:col-span-1">
+                <Mainweather weatherData={weatherData} />
+                {hourlyForecast && <HourlyForecast forecastData={hourlyForecast} />}
+                <div>
+                  {fiveDayForecast && <FiveDayForecast forecastData={fiveDayForecast} />}
+                </div>
+              </div>
+              {Right Side}
+              <div className="lg:col-span-2">
+                <TodayHighlights weatherData={weatherData} airQualityData={airQualityData} />
+                <WeatherSuggestion weatherData={weatherData} airQualityData={airQualityData} />
+              </div>
+            </div>
+          </div>
+        )} */
