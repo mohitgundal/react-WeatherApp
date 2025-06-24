@@ -146,11 +146,11 @@ export default theme;`}function Bf(u={},...r){const{breakpoints:f,mixins:c={},sp
       p-4 sm:p-6 md:p-8\r
       flex flex-col gap-6 sm:gap-8\r
       transition duration-300\r
-    `,children:[z.jsx("div",{className:"text-lg sm:text-2xl font-bold mb-2 sm:mb-4 tracking-tight text-gray-900 dark:text-white",children:"Today's Highlights"}),z.jsxs("div",{className:"flex flex-col md:flex-row gap-4 sm:gap-6",children:[z.jsxs("div",{className:`\r
+    `,children:[z.jsx("div",{className:"text-lg sm:text-2xl font-bold mb-2 sm:mb-4 tracking-tight text-gray-900 dark:text-white",children:"Today's Highlights"}),z.jsxs("div",{className:"flex flex-col md:flex-row md:flex-nowrap gap-4 sm:gap-6",children:[z.jsxs("div",{className:`\r
           bg-white/40 dark:bg-gray-700/50\r
           backdrop-blur-md\r
           border border-white/10 dark:border-gray-700/30\r
-          rounded-xl p-4 sm:p-6 flex-1 min-w-[180px] sm:min-w-[220px] md:min-w-[260px]\r
+          rounded-xl p-4 sm:p-6 flex-1 min-w-0\r
           shadow hover:shadow-xl transition duration-300 flex flex-col gap-3 sm:gap-4\r
         `,children:[z.jsxs("div",{className:"flex justify-between items-center text-base sm:text-lg font-semibold mb-1 sm:mb-2 text-gray-900 dark:text-white",children:[z.jsx("span",{children:"Air Quality Index"}),z.jsx("span",{className:`
               text-xs sm:text-base font-bold px-2 sm:px-3 py-1 rounded-md text-white
@@ -159,7 +159,7 @@ export default theme;`}function Bf(u={},...r){const{breakpoints:f,mixins:c={},sp
           bg-white/40 dark:bg-gray-700/50\r
           backdrop-blur-md\r
           border border-white/10 dark:border-gray-700/30\r
-          rounded-xl p-4 sm:p-6 flex-1 min-w-[180px] sm:min-w-[220px] md:min-w-[260px]\r
+          rounded-xl p-4 sm:p-6 flex-1 min-w-0\r
           shadow hover:shadow-xl transition duration-300 flex flex-col gap-3 sm:gap-4\r
         `,children:[z.jsx("div",{className:"text-base sm:text-lg font-semibold mb-1 sm:mb-2 text-gray-900 dark:text-white",children:"Sunrise & Sunset"}),z.jsxs("div",{className:"flex justify-between px-0 sm:px-2",children:[z.jsxs("div",{className:"flex flex-col items-center",children:[z.jsx(Wf,{className:"text-3xl sm:text-4xl text-yellow-400 mb-1"}),z.jsx("p",{className:"text-lg sm:text-2xl font-bold text-gray-900 dark:text-white",children:new Date(m.sunrise*1e3).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})}),z.jsx("span",{className:"text-xs sm:text-sm mt-1 text-gray-700 dark:text-gray-200",children:"Sunrise"})]}),z.jsxs("div",{className:"flex flex-col items-center",children:[z.jsx(u4,{className:"text-3xl sm:text-4xl text-indigo-300 mb-1"}),z.jsx("p",{className:"text-lg sm:text-2xl font-bold text-gray-900 dark:text-white",children:new Date(m.sunset*1e3).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})}),z.jsx("span",{className:"text-xs sm:text-sm mt-1 text-gray-700 dark:text-gray-200",children:"Sunset"})]})]})]})]}),z.jsx("div",{className:"grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-3 sm:mt-4",children:j.map((H,O)=>z.jsx(i4,{title:H.title,value:H.value,Icon:H.Icon},O))}),z.jsxs("div",{className:"mt-5 sm:mt-6",children:[z.jsx("div",{className:"text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-gray-900 dark:text-white",children:"Next Hour Precipitation"}),z.jsx("div",{className:"flex overflow-x-auto pb-3 sm:pb-4 -mx-2",children:Array.from({length:12}).map((H,O)=>z.jsxs("div",{className:"flex flex-col items-center px-2 sm:px-3 flex-shrink-0",children:[z.jsxs("p",{className:"text-gray-700 dark:text-gray-300 text-xs sm:text-sm",children:[O*5," min"]}),z.jsx("div",{className:"h-8 flex items-end justify-center mt-1 sm:mt-2 w-5 sm:w-6",children:z.jsx("div",{className:"bg-blue-400 w-3 sm:w-4 rounded-t",style:{height:`${Math.random()*30+10}px`}})}),z.jsxs("p",{className:"text-xs text-gray-600 dark:text-gray-400 mt-1",children:[Math.round(Math.random()*30),"%"]})]},O))})]})]})},d4=({forecastData:u})=>{if(!u||!u.list)return z.jsx("div",{className:"text-center text-gray-400 py-4",children:"Loading forecast..."});const r=o=>{const m=new Date(o);return new Intl.DateTimeFormat("en-GB",{weekday:"short",day:"2-digit",month:"short"}).format(m)},f=[],c={};return u.list.forEach(o=>{const m=o.dt_txt.split(" ")[0],y=o.dt_txt.split(" ")[1];(!c[m]||y==="12:00:00")&&(c[m]=o)}),Object.keys(c).slice(0,5).forEach(o=>{f.push(c[o])}),z.jsxs("div",{className:`\r
       bg-white/30 dark:bg-gray-800/50\r
