@@ -1,43 +1,45 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import Navbar from './components/Navbar'
-import Mainweather from './components/Mainweather';
-import TodayHighlights from './components/TodayHighlights';
-import axios from 'axios';
-import FiveDayForecast from './components/FiveDayForecast';
-import WeatherSuggestion from './components/WeatherSuggestion';
-import HourlyForecast from './components/HourlyForecast';
-
-
+import { useEffect, useState } from "react";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Mainweather from "./components/Mainweather";
+import TodayHighlights from "./components/TodayHighlights";
+import axios from "axios";
+import FiveDayForecast from "./components/FiveDayForecast";
+import WeatherSuggestion from "./components/WeatherSuggestion";
+import HourlyForecast from "./components/HourlyForecast";
 
 function App() {
-
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const [weatherData, setWeatherData] = useState(null);
   // const [city, setcity] = useState('London');
-  const [city, setcity] = useState('Mumbai');
+  const [city, setcity] = useState("Mumbai");
   const [airQualityData, setAirQualityData] = useState(null);
   const [fiveDayForecast, setFiveDayForecast] = useState(null);
 
   const [hourlyForecast, setHourlyForecast] = useState(null);
 
   useEffect(() => {
-    fetchweatherData(city)
+    fetchweatherData(city);
   }, [city]);
 
   const fetchAirQualityData = (lat, lon) => {
-    const API_KEY = '1d5762eaee9edbfaf0e430baa85115ae';
-    axios.get(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
-      .then(response => {
+    const API_KEY = "1d5762eaee9edbfaf0e430baa85115ae";
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`
+      )
+      .then((response) => {
         setAirQualityData(response.data.list[0]);
       })
-      .catch(error => console.error('Error fetching the air quality data:', error));
+      .catch((error) =>
+        console.error("Error fetching the air quality data:", error)
+      );
   };
 
   const fetchweatherData = async (city) => {
-    const API_KEY = '1d5762eaee9edbfaf0e430baa85115ae';
+    const API_KEY = "1d5762eaee9edbfaf0e430baa85115ae";
     setLoading(true);
     setError(null);
     setWeatherData(null);
@@ -45,12 +47,16 @@ function App() {
     setFiveDayForecast(null);
 
     try {
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`);
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
+      );
       const data = await response.json();
 
       //new code for hourly updates
       try {
-        const hourlyResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=24&appid=${API_KEY}`);
+        const hourlyResponse = await fetch(
+          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=24&appid=${API_KEY}`
+        );
         const hourlyData = await hourlyResponse.json();
         setHourlyForecast(hourlyData);
       } catch (err) {
@@ -68,7 +74,9 @@ function App() {
 
       // Fetch Air Quality
       try {
-        const airResponse = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=${API_KEY}`);
+        const airResponse = await fetch(
+          `https://api.openweathermap.org/data/2.5/air_pollution?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=${API_KEY}`
+        );
         const airData = await airResponse.json();
         setAirQualityData(airData.list[0]);
       } catch (err) {
@@ -77,7 +85,9 @@ function App() {
 
       // Fetch 5 Day Forecast
       try {
-        const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`);
+        const forecastResponse = await fetch(
+          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`
+        );
         const forecastData = await forecastResponse.json();
         setFiveDayForecast(forecastData);
       } catch (err) {
@@ -91,7 +101,6 @@ function App() {
       setLoading(false);
     }
   };
-
 
   const handleSearch = (searchedCity) => {
     setcity(searchedCity);
@@ -109,10 +118,12 @@ function App() {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
         const { latitude, longitude } = position.coords;
-        const API_KEY = '1d5762eaee9edbfaf0e430baa85115ae';
+        const API_KEY = "1d5762eaee9edbfaf0e430baa85115ae";
 
         try {
-          const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`);
+          const response = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`
+          );
           const data = await response.json();
 
           if (!response.ok || !data.main) {
@@ -124,7 +135,9 @@ function App() {
           setWeatherData(data);
 
           try {
-            const airResponse = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`);
+            const airResponse = await fetch(
+              `https://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`
+            );
             const airData = await airResponse.json();
             setAirQualityData(airData.list[0]);
           } catch {
@@ -132,7 +145,9 @@ function App() {
           }
 
           try {
-            const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`);
+            const forecastResponse = await fetch(
+              `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`
+            );
             const forecastData = await forecastResponse.json();
             setFiveDayForecast(forecastData);
           } catch {
@@ -168,36 +183,61 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-200 via-purple-100 to-pink-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
-
       <div>
-        <Navbar onSearch={handleSearch} onCurrentLocation={handleCurrentLocationClick} />
+        <Navbar
+          onSearch={handleSearch}
+          onCurrentLocation={handleCurrentLocationClick}
+        />
 
         {/* Show loading spinner/message */}
         {loading && (
-          <div className="bg-white/40 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/40 rounded-xl shadow p-6 text-center text-gray-400 dark:text-gray-200 py-8 text-xl mx-auto max-w-lg mt-12">Loading...</div>
+          <div className="bg-white/40 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/40 rounded-xl shadow p-6 text-center text-gray-400 dark:text-gray-200 py-8 text-xl mx-auto max-w-lg mt-12">
+            Loading...
+          </div>
         )}
 
         {error && (
-          <div className="bg-white/40 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/40 rounded-xl shadow p-6 text-center text-red-500 py-8 text-xl mx-auto max-w-lg mt-12">{error}</div>
+          <div className="bg-white/40 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/40 rounded-xl shadow p-6 text-center text-red-500 py-8 text-xl mx-auto max-w-lg mt-12">
+            {error}
+          </div>
         )}
-
 
         {!loading && !error && weatherData && (
           <div className="max-w-3xl md:max-w-4xl lg:max-w-7xl mx-auto px-2 sm:px-4 py-6 sm:py-8">
-            <div className="grid grid-cols-1 gap-6 place-items-center">
+            {/* <div className="grid grid-cols-1 gap-6 place-items-center">
               <Mainweather weatherData={weatherData} />
               {hourlyForecast && <HourlyForecast forecastData={hourlyForecast} />}
               {fiveDayForecast && <FiveDayForecast forecastData={fiveDayForecast} />}
               <TodayHighlights weatherData={weatherData} airQualityData={airQualityData} />
               <WeatherSuggestion weatherData={weatherData} airQualityData={airQualityData} />
+            </div> */}
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="space-y-6">
+                <Mainweather weatherData={weatherData} />
+                {hourlyForecast && (
+                  <HourlyForecast forecastData={hourlyForecast} />
+                )}
+                {fiveDayForecast && (
+                  <FiveDayForecast forecastData={fiveDayForecast} />
+                )}
+              </div>
+              <div className="space-y-6">
+                <TodayHighlights
+                  weatherData={weatherData}
+                  airQualityData={airQualityData}
+                />
+                <WeatherSuggestion
+                  weatherData={weatherData}
+                  airQualityData={airQualityData}
+                />
+              </div>
             </div>
           </div>
         )}
-
       </div>
-
     </div>
   );
 }
 
-export default App
+export default App;
