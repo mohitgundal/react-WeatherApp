@@ -170,34 +170,17 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-blue-200 via-purple-100 to-pink-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
 
       <div>
-        {/* <Navbar onSearch={handleSearch} /> */}
         <Navbar onSearch={handleSearch} onCurrentLocation={handleCurrentLocationClick} />
 
         {/* Show loading spinner/message */}
         {loading && (
-          // <div className="text-center text-gray-400 py-8 text-xl">Loading...</div>
           <div className="bg-white/40 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/40 rounded-xl shadow p-6 text-center text-gray-400 dark:text-gray-200 py-8 text-xl mx-auto max-w-lg mt-12">Loading...</div>
         )}
 
-        {/* Show error message */}
         {error && (
-          // <div className="text-center text-red-500 py-8 text-xl">{error}</div>
           <div className="bg-white/40 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/40 rounded-xl shadow p-6 text-center text-red-500 py-8 text-xl mx-auto max-w-lg mt-12">{error}</div>
         )}
 
-        {/* Show weather UI only if not loading and not error */}
-        {/* Changed code block */}
-        {/* {!loading && !error && weatherData && (
-          <div className="max-w-3xl md:max-w-4xl lg:max-w-7xl mx-auto px-2 sm:px-4 py-6 sm:py-8">
-            <div className="grid grid-cols-1 gap-6">
-              <Mainweather weatherData={weatherData} />
-              {hourlyForecast && <HourlyForecast forecastData={hourlyForecast} />}
-              {fiveDayForecast && <FiveDayForecast forecastData={fiveDayForecast} />}
-              <TodayHighlights weatherData={weatherData} airQualityData={airQualityData} />
-              <WeatherSuggestion weatherData={weatherData} airQualityData={airQualityData} />
-            </div>
-          </div>
-        )} */}
 
         {!loading && !error && weatherData && (
           <div className="max-w-3xl md:max-w-4xl lg:max-w-7xl mx-auto px-2 sm:px-4 py-6 sm:py-8">
